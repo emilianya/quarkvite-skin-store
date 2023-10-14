@@ -12,8 +12,8 @@
 		"nodemon": "nodemon -q dist/index.js",
 		"dev": "npm-run-all --parallel npxwatch nodemon",
 		"start": "npx tsc && node dist/index.js",
-		"setup-deploy-dev": "pm2 deploy yggdrasil.config.cjs dev setup",
-		"setup-deploy-prod": "pm2 deploy yggdrasil.config.cjs prod setup"
+		"setup-deploy-dev": "pm2 deploy yggdrasil.config.cjs qvssdev setup",
+		"setup-deploy-prod": "pm2 deploy yggdrasil.config.cjs qvssprod setup"
 	},
 	"dependencies": {
 		"axios": "^1.5.1",

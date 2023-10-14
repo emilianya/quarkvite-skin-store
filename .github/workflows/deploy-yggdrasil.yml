@@ -25,9 +25,9 @@ jobs:
           node-version: ${{ matrix.node-version }}
           cache: 'npm'
       - run: yarn install
-      - run: pm2 deploy yggdrasil.config.cjs prod
+      - run: pm2 deploy yggdrasil.config.cjs qvssprod
         if: github.ref_name == 'senpai'
-      - run: pm2 deploy yggdrasil.config.cjs dev
+      - run: pm2 deploy yggdrasil.config.cjs qvssdev
         if: github.ref_name == 'kojirou'
       - name: Create commit comment
         uses: peter-evans/commit-comment@v2
