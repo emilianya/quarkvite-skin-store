@@ -1,36 +1,36 @@
 module.exports = {
 	apps : [{
-		name: `quarky-skin-store-kojirou`,
+		name: `quarkvite-skin-store-dev`,
 		script: 'npm run start',
-		env_phoenix: {
-			QS_ENV: "phoenix",
+		env_dev: {
+			QS_ENV: "dev",
 			NODE_ENV: "production"
 		}
 	},{
-		name: `quarky-skin-store-senpai`,
+		name: `quarkvite-skin-store-prod`,
 		script: 'npm run start',
 		env_production: {
-			QS_ENV: "senpai",
+			QS_ENV: "prod",
 			NODE_ENV: "production"
 		}
 	}],
 	// Deployment Configuration
 	deploy : {
-		kojirou : {
+		qvssdev : {
 			"user" : "q2",
 			"host" : ["cirno.yggdrasil.cat"],
 			"ref"  : "origin/kojirou",
-			"repo" : "git@github.com:meower-holdings/quarky-skin-store.git",
-			"path" : "/home/q2/kojirou",
-			"post-deploy" : "yarn install && pm2 startOrRestart yggdrasil.config.cjs --only quarky-skin-store-kojirou --env kojirou"
+			"repo" : "git@github.com:emilianya/quarkvite-skin-store.git",
+			"path" : "/home/q2/qvssdev",
+			"post-deploy" : "yarn install && pm2 startOrRestart yggdrasil.config.cjs --only quarkvite-skin-store-dev --env dev"
 		},
-		senpai : {
+		qvssprod : {
 			"user" : "q2",
 			"host" : ["cirno.yggdrasil.cat"],
 			"ref"  : "origin/senpai",
-			"repo" : "git@github.com:meower-holdings/quarky-skin-store.git",
-			"path" : "/home/q2/senpai",
-			"post-deploy" : "yarn install && pm2 startOrRestart yggdrasil.config.cjs --only quarky-skin-store-senpai --env production"
+			"repo" : "git@github.com:emilianya/quarkvite-skin-store.git",
+			"path" : "/home/q2/qvssprod",
+			"post-deploy" : "yarn install && pm2 startOrRestart yggdrasil.config.cjs --only quarkvite-skin-store-prod --env production"
 		}
 	}
 };
