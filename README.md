@@ -1,1 +1,1 @@
-# quarky-skin-store
+# quark(y || vite)-skin-store
