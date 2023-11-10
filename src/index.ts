@@ -28,7 +28,7 @@ export const unleash = initialize({
 
 // Set up body parsers
 app.use(express.json());
-app.use(express.text());
+app.use(express.text({limit: "50mb"}));
 
 // Set up custom middleware
 app.use((req, res, next) => {
